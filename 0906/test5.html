@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+<script>
+  
+// var str = "asd111fd540fdkj888kfds123fn,,f666fdsl";
+// var str = "abc123def";
+var str = "a1b2c3d4";
+
+// var s2 = str.replace(/[a-z]+/,"hello");
+
+/*var s2 = str.replace(/[a-z]\d/g,function(a,b,c,d,e,f){
+  console.log( a,b,c,d,e,f );
+});*/
+
+/*var s2 = str.replace(/([a-z])(\d)/g,function(a,b,c,d,e,f){
+  console.log( a,b,c,d,e,f );
+});*/
+
+var s2 = str.replace(/(([a-z])(\d))/g,function(a,b,c,d,e,f){
+  // console.log( a,b,c,d,e,f );
+  return c.toUpperCase() + d;
+});
+
+var str = "-webkit-border-raduis"; //"webkitBorderRaduis"
+
+var str2 = str.replace(/-(\w)(\w+)/g,function(a,b,c,d){
+  // console.log(a,b,c);
+  return d == 0 ? b + c : b.toUpperCase() + c;
+});
+
+console.log( str2 );
+
+
+/*
+子项： 由 () 包含的子正则表达式
+  子项的顺序： 以 () 的左括号"(" 出现的顺序作为子项的顺序。
+
+replace(re|str,fn|str)
+  re|str:  要被替换的字符串或用来匹配被替换字符串的正则表达式
+  
+  fn|str : 替换结果的字符串或返回替换结果的回调函数
+    fn : 回调函数的参数个数是不确定的，参数的值依次分别为：
+      第一个参数为正则的完整匹配结果，从第二个参数开始，后面的参数为每一个正则子项的结果（假设有子项的情况），然后是完整匹配结果字符串在整个字符串中的位置，再然后是被匹配的字符串本身
+
+*/ 
+
+
+// console.log( s2 );
+// console.log( typeof s2 );
+
+</script>
+
+</body>
+</html>

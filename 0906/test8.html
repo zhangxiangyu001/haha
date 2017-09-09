@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+<textarea id="txt"></textarea>
+<input type="button" id="btn" value="提取">
+
+<script>
+
+var oTxt = document.getElementById('txt');
+var oBtn = document.getElementById('btn');
+// var str = "a12afGU3P32fdafjo123Uff43dkap";
+// var re = /[a-z]+/;
+// var re = /[a-z]+/g;
+// var re = /[a-z]+/gi;
+
+// console.log( str.match(re) );
+
+// var str = `fdsaf
+// fdaf
+// fdasf
+// fdasf`;
+
+// var str = "1231safdsf234fdaf";
+var str = `1231safdsf234fdaf
+123alfdjlj
+4894fsdaflja
+46546faf;af`;
+// var re = /^\d+/g;
+var re = /^\d+/gm;
+
+// console.log( str.match(re) );
+
+oBtn.onclick = function(){
+  var val = oTxt.value;
+  // var re = /^\d+/g;
+  var re = /^\d+/gm;
+
+  console.log( val.match(re) );
+
+};
+
+/*
+match() 方法在正则不使用全局修饰符g时，匹配的是第一个符合正则的字符串，同时会额外提供两个属性index和input.
+  index : 匹配结果在字符串中的位置
+  input : 被匹配的字符串本身
+
+正则修饰符： 
+  g  : 全局匹配
+  i  : 忽略大小写
+  m  : 多行匹配
+*/
+
+// var arr = [1,2,3,4];
+// arr.name = "小明";
+// arr.fn = function(){ alert(this.name); };
+// console.log( arr );
+// for(var i=0; i<arr.length; i++){
+//   console.log( arr[i] );
+// }
+
+
+</script>
+
+</body>
+</html>

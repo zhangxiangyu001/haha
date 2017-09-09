@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+<script>
+  
+var str = "asd111fd540fdkj888kfds123fn,,f666fdsl";
+// var arr = ["111","888","666"];
+
+var arr = str.match(/(\d)\1+/g);
+
+/*
+
+/(\d)\1+/g    
+  \1 : 匹配与第一个子项完全相同的字符。
+
+
+*/
+
+console.log( arr );
+
+
+
+
+</script>
+
+
+</body>
+</html>

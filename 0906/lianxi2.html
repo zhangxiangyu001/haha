@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    #div1 {
+      width: 200px; height: 200px;
+      border: 5px solid #333;
+    }
+    .a { background: pink; }
+    .b { font-size: 50px; }
+    .c { line-height: 200px; text-align: center; }
+  </style>
+</head>
+<body>
+
+
+<input type="text" id="txt">
+<input type="button" value="确定" id="btn">
+<div id="div1" class="a b c">Hello</div>
+  
+<script>
+  
+var oTxt = document.getElementById('txt');
+var oBtn = document.getElementById('btn');
+var oDiv = document.getElementById('div1');
+oBtn.onclick = function(){
+  var str = oTxt.value.trim(); //trim() 处理首尾多余的空格，以及纯空格的情况。
+  if( !str )return;
+  //在任何情况下，只要是处理表单数据，都应该先处理表单为空的情况。
+  var arr = str.split(/\s+/g); //用正则来匹配连续的多个空格的情况
+
+  for(var i=0; i<arr.length; i++){
+    if( hasClass(oDiv,arr[i]) ){
+      removeClass(oDiv, arr[i]);
+    }else{
+      addClass(oDiv, arr[i]);
+    }
+  }
+};
+
+function addClass(obj,sClass){
+  var re = new RegExp("\\b" + sClass + "\\b");
+  var str = obj.className;
+
+  // 如果test()返回true，说明obj已经有sClass这个类了
+  if( !re.test( str ) ){
+
+    str += " " + sClass;
+
+    obj.className = str.trim(); 
+    //如果添加的sClass是obj的第一个类，字符串左边是不需要有空格的。 
+  
+  }
+}
+
+function removeClass(obj,sClass){
+  var arr = obj.className.split(" ");
+  arr = arr.filter(function(v){ return v != sClass; });
+  obj.className = arr.join(" ");
+}
+
+function hasClass(obj,sClass){
+  var re = new RegExp("\\b" + sClass + "\\b");
+  return re.test(obj.className);
+}
+
+
+/*
+普通版（A作业）
+封装三个函数
+  addClass(obj,sClass) : 给元素添加指定 class
+
+  removeClass(obj,sClass): 删除元素的指定class
+
+  hasClass(obj,sClass): 判断元素是否有指定class
+
+
+在输入框输入class名称，点击『确定』  
+
+  1， 添加class
+
+  2， 删除class
+
+  两个功能可以分开写，也可以合并写
+
+
+加强版（B作业）
+
+  在普通版的基础上，可以同时输入多个class（用空格分隔），每个class都单独处理
+   比如： 输入  "a b c"
+    可能的情况是 添加 a  和 c class，删除 b class
+    也有可能是 删除 a 和 b class 添加 c class
+
+
+*/
+
+</script>
+
+
+</body>
+</html>

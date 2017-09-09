@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+  
+// var str = "asd111fd540fdkj888kfds123fn,,f666fdsl";
+// var re = /(\d)\1+/g;
+
+// var arr = str.match(re);
+
+
+  
+// var str = "a1132111fsdf2712r4332fff354353ds87991299adfk662121366fdaf";
+// // ["1132111","991299","662121366"]
+// var re = /(\d)\1+\d+\1+/g;
+
+// var arr = str.match(re);
+
+// var str = "23flja1b1kdjlc3d4ffda5d6sflfs3sffd8sa";
+// //["a1b1","c3d4","a5d6"]
+// var re = /([a-z]\d){2,}/g;
+
+// var str = "23flja1a1kdjlc3c3ffda5d6sflfs3sffd8d8sa";
+// //["a1a1","c3c3","d8d8"]
+// var re = /([a-z]\d)\1+/g;
+
+
+var str = "23flja11a111111kdjlc33c333ffda543d5436sf66f88flfs333b4444sffd8d8sa";
+//["a1a1","c3c3","d8d8"]
+// var re = /([a-z]\d)\1+/g;
+// var re = /([a-z]\d+)\1+/g;
+// var re = /([a-z]\d+)+/g;
+// var re = /([a-z]\d+)+/g;
+// var re = /([a-z](\d)\2+)+/g;
+var re = /([a-z](\d)\2+)\1+/g;
+
+var arr = str.match(re);
+console.log( arr );
+
+/*
+\1   表示匹配与第一个子项完全相同的内容
+\2   表示匹配与第二个子项完全相同的内容
+\n   表示匹配与第n个子项完全相同的内容
+*/ 
+
+
+</script>
+  
+</body>
+</html>

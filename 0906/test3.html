@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+<script>
+  
+var str = "asd123fsdf2139asdf9089fdsf7123";
+
+// arr = ["123","2139","9089"]
+
+//不使用正则：
+/*
+""
+["123","2139","9089"]
+思路：
+  从前往后一个字符一个字符地检查，如果是数字就拼接到临时的变量tmp中，如果不是，就把之前拼接到的数字保存到数组中，并且清除临时字符串，继续下一次查找。
+*/
+/*var tmp = "", arr = [];
+
+for(var i=0; i<str.length; i++){
+  var n = str.charCodeAt(i);
+  if( n > 47 && n < 58 ){
+    tmp += str.charAt(i);
+  }else{
+    if(tmp)arr.push(tmp);
+    tmp = "";
+  }
+}
+if(tmp)arr.push(tmp);
+console.log( arr );*/
+
+// 使用正则：
+var arr = str.match(/\d+/g);
+console.log( arr );
+
+/*
+
+0 ~ 9 ： 48 ~ 57
+
+charCodeAt(n) : 获取第n个位置上字符的编码
+
+*/
+
+
+</script>
+
+
+</body>
+</html>

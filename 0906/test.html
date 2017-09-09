@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+<script>
+  
+var str = "   fdsaf fas2fa jll124 fdsaf fsa     ";
+
+var s = "adfu1abcd90adcdlkajf;a^cf9afc00";
+
+// var re = /a[^bd]c/g;
+// var re = /a[b^d]c/g;
+
+// var re = /\w+(?=f)/g
+var re = /\w+(?!f)/g
+
+// console.log( s );
+// console.log( s.match(re) );
+
+var str2 = "小明和小红逛街，买3件衬衣，每件120元，小计：360元，2双鞋，其中一双50元，另一双，200元，小计：250元，总价：610元";
+
+var re2 = /\d+(?=元)/g;
+// var re2 = /\d+元/g;
+
+console.log( str2.match(re2) );
+
+/*
+(?=x) / (?!x)
+  x只作匹配时的限制条件，不会作为匹配结果返回。
+
+'abc'.search(/a/)
+
+/a/.test('abc')
+
+正则子项  ()
+
+*/ 
+
+
+
+// var re = /^\s+|\s+$/g;
+// alert( "(" + str + ")" );
+
+// alert( "(" + str.replace(re,"") + ")" );
+
+/*
+元字符   .  \w   \W  \b  \B  \d  \D   \s  \S   \n  \r  
+
+字符组
+[]  匹配字符列表， 匹配字符组中的存在的任意一个字符。
+/a[bd]c/     abc   adc 
+
+[^ab]  排除字符列表
+
+[a^b]  匹配 a / b / ^ 这三个字符中的任意一个字符
+  说明：在字符组中 ^符号只有在起始位置时才有特殊含义
+
+
+修饰符：
+i   g   m
+
+*/
+
+
+
+</script>
+
+</body>
+</html>
